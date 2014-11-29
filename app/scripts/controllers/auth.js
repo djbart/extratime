@@ -7,7 +7,7 @@ app.controller('AuthCtrl', function ($scope, $location, Auth, user) {
 
   $scope.login = function () {
     Auth.login($scope.user).then(function () {
-      $location.path('/');
+      $location.path('/dashboard');
     }, function (error) {
       $scope.error = error.toString();
     });

@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('Auth', function ($firebaseSimpleLogin, $firebase, FIREBASE_URL, $rootScope) {
+app.factory('Auth', function ($firebaseSimpleLogin, $location, $firebase, FIREBASE_URL, $rootScope) {
   var ref = new Firebase(FIREBASE_URL);
   var auth = $firebaseSimpleLogin(ref);
 
@@ -46,6 +46,8 @@ app.factory('Auth', function ($firebaseSimpleLogin, $firebase, FIREBASE_URL, $ro
     	Auth.user.profile.$destroy();
   	}
   	angular.copy({}, Auth.user);
+
+    $location.path('/login');
 	});
 
   return Auth;
