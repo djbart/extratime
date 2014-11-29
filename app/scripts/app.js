@@ -61,6 +61,22 @@ var app = angular
 		  templateUrl: 'views/spelers.html',
 		  controller: 'SpelersCtrl'
 		})
+		.when('/dashboard', {
+		  templateUrl: 'views/dashboard.html',
+		  controller: 'DashboardCtrl'
+		})
+		.when('/premies', {
+		  templateUrl: 'views/premies.html',
+		  controller: 'PremiesCtrl'
+		})
+		.when('/afsluiting', {
+		  templateUrl: 'views/afsluiting.html',
+		  controller: 'AfsluitingCtrl'
+		})
+		.when('/profile', {
+		  templateUrl: 'views/profile.html',
+		  controller: 'ProfileCtrl'
+		})
       .otherwise({
         redirectTo: '/'
       });
