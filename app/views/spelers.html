@@ -5,6 +5,30 @@
   <div class="col-md-9 col-sm-8">
 	<div class="content">
 	  <h3>Spelers</h3>
+	  <table class="table table-hover">
+		<thead>
+			<tr>
+			<th>Premie</th>
+			<th>Voornaam</th>
+			<th>Familienaam</th>
+			<th>Acties</td>
+			</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="player in players">
+			<td><input type="checkbox" ng-model="player.payed"></td>
+			<td>{{ player.firstname }}</td>
+			<td>{{ player.lastname}}</td>
+			<td><a ng-click="deletePlayer(player)">delete</a></td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" ng-model="player.payed"></td>
+			<td><input type="text" class="form-control" placeholder="Voornaam" ng-model="player.firstname" required /></td>
+			<td><input type="text" class="form-control" placeholder="Familienaam" ng-model="player.lastname" required /></td>
+			<td><a ng-click="submitPlayer()">toevoegen</a></td>
+		</tr>
+		</tbody>
+	  </table>
 	</div>
   </div>
 </div>
