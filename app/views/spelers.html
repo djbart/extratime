@@ -4,11 +4,13 @@
   </div>
   <div class="col-md-9 col-sm-8">
 	<div class="content">
-	  <h3>Spelers</h3>
+	  <h3>Beheer spelers</h3>
+	  <span class="label label-primary">Beheer spelers en selecteer premie-gerechtigde spelers</span>
 	  <table class="table table-hover">
 		<thead>
 			<tr>
 			<th>Premie</th>
+			<th>Email</th>
 			<th>Voornaam</th>
 			<th>Familienaam</th>
 			<th>Acties</td>
@@ -17,15 +19,17 @@
 		<tbody>
 		<tr ng-repeat="player in players">
 			<td><input type="checkbox" ng-model="player.payed"></td>
+			<td>{{ player.email }}</td>
 			<td>{{ player.firstname }}</td>
 			<td>{{ player.lastname}}</td>
-			<td><a ng-click="deletePlayer(player)">delete</a></td>
+			<td><a class="glyphicon glyphicon-trash" ng-click="deletePlayer(player)"></a></td>
 		</tr>
 		<tr>
 			<td><input type="checkbox" ng-model="player.payed"></td>
+			<td><input type="email" class="form-control" placeholder="Email" ng-model="player.email" required /></td>
 			<td><input type="text" class="form-control" placeholder="Voornaam" ng-model="player.firstname" required /></td>
 			<td><input type="text" class="form-control" placeholder="Familienaam" ng-model="player.lastname" required /></td>
-			<td><a ng-click="submitPlayer()">toevoegen</a></td>
+			<td><a class="glyphicon glyphicon-plus" ng-click="submitPlayer()"></a></td>
 		</tr>
 		</tbody>
 	  </table>

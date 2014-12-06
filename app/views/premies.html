@@ -4,7 +4,43 @@
   </div>
   <div class="col-md-9 col-sm-8">
 	<div class="content">
-	  <h3>Premies</h3>
+	  <h3>Premies - December 2014</h3>
+	
+	  <span class="label label-primary">Beheer premies en onkosten</span>
+	  <table class="table table-hover">
+		<thead>
+			<tr>
+			<th>Speler</th>
+			<th>Netto premie</th>
+			<th>Onkosten</th>
+			<th>BV</th>
+			<th>Bruto</td>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>Eden Hazard</td>
+			<td><input type="number" ng-model="eden.netto" class="form-control" placeholder="Netto premie" required /></td>
+			<td><input type="number" ng-model="eden.onkosten" class="form-control" placeholder="Onkosten" required /></td>
+			<td><input type="number" class="form-control" placeholder="BV" value="{{(eden.netto + eden.onkosten)*0.13}}" /></td>
+			<td><input type="number" class="form-control" placeholder="Bruto" value="{{((eden.netto + eden.onkosten)*0.13)+(eden.netto + eden.onkosten)}}"  /></td>
+		</tr>
+		<tr>
+			<td>Vincent Company</td>
+			<td><input type="number" ng-model="vincent.netto" class="form-control" placeholder="Netto premie" required /></td>
+			<td><input type="number" ng-model="vincent.onkosten" class="form-control" placeholder="Onkosten" required /></td>
+			<td><input type="number" class="form-control" placeholder="BV" value="{{(vincent.netto + vincent.onkosten)*0.33}}" /></td>
+			<td><input type="number" class="form-control" placeholder="Bruto" value="{{((vincent.netto + vincent.onkosten)*0.33)+(vincent.netto + vincent.onkosten)}}"  /></td>
+		</tr>
+		<tr>
+			<td><strong>Totaal</strong></td>
+			<td><input type="number" class="form-control" placeholder="Netto premie" value="{{eden.netto + vincent.netto}}" required /></td>
+			<td><input type="number" class="form-control" placeholder="Onkosten" value="{{eden.onkosten + vincent.onkosten}}" required /></td>
+			<td><input type="number" class="form-control" placeholder="BV" value="{{((eden.netto + eden.onkosten)*0.13) + ((vincent.netto + vincent.onkosten)*0.33)}}" /></td>
+			<td><input type="number" class="form-control" placeholder="Bruto" value="{{(((eden.netto + eden.onkosten)*0.13)+(eden.netto + eden.onkosten)) +(((vincent.netto + vincent.onkosten)*0.33)+(vincent.netto + vincent.onkosten))}}" /></td>
+		</tr>
+		</tbody>
+	  </table>
 	</div>
   </div>
 </div>

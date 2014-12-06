@@ -1,13 +1,15 @@
 <div class="auth-forms">
 
-  <h2>Register</h2>
+  <h2>Registreren</h2>
 
   <form ng-submit="register()">
     <p ng-show="error" class="text-danger">{{ error }}</p>
-    <input type="text" ng-model="user.username" placeholder="Username" class="form-control"><br>
+    <input type="text" ng-model="user.username" placeholder="Gebruikersnaam" class="form-control"><br>
     <input type="email" ng-model="user.email" placeholder="Email" class="form-control"><br>
-    <input type="password" ng-model="user.password" placeholder="Password" class="form-control"><br>
-    <input type="submit" value="Register" class="btn btn-primary" />
+    <input type="password" ng-model="user.password" placeholder="Paswoord" class="form-control"><br>
+    <input type="text" placeholder="Ondernemingsnummer (optioneel)" class="form-control">
+    <p class="help-block">Via je ondernemingsnummer kunnen we je club- en spelersgegevens reeds klaarzetten. Deze gegevens worden ons aangeleverd door de KBVB.</p><br>
+    <input type="submit" value="Registreren" class="btn btn-primary" />
   </form>
 
 </div>

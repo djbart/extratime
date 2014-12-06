@@ -11,6 +11,9 @@ app.controller('SpelersCtrl', function ($scope, $location, Auth, Players) {
   $scope.player.creator = $scope.user.profile.username;
   $scope.player.creatorUID = $scope.user.uid;
   Players.create($scope.player);
+  $scope.player.email = '';
+  $scope.player.firstname = '';
+  $scope.player.lastname = '';
   };
 
   $scope.deletePlayer = function (player) {
