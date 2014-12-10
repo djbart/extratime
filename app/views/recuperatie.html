@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-3 col-sm-4">
+  	<div ng-include="'views/menu.html'"></div>
+  </div>
+  <div class="col-md-9 col-sm-8">
+	<div class="content">
+	  <h3>Recuperatie doorstorting BV</h3>
+	
+	  <table class="table table-hover">
+		<thead>
+			<tr>
+			<th>Categorie</th>
+			<th>Aandeel</th>
+			<th>Bedrag</th>
+			<th>Maximum</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>Premies voor spelers jonger dan 23</td>
+			<td>50%</td>
+			<td>200€</td>
+			<td>550€</td>
+		</tr>
+		<tr>
+			<td>Andere recupereerbare kosten</td>
+			<td>50%</td>
+			<td><input type="number" max="550" ng-model="recup.bedrag" class="form-control" placeholder="Huidig bedrag" value="400" required /></td>
+			<td>550€</td>
+		</tr>
+		<tr>
+			<td><b>Totaal</b></td>
+			<td>100%</td>
+			<td>{{200+recup.bedrag}}€</td>
+			<td>1100€</td>
+		</tr>
+		</tbody>
+	  </table>
+	
+	  <p class="bg-success" style="padding:15px;text-align: center;color: green;font-weight: bold;">Momenteel recupereert u {{200+recup.bedrag}}€ van de 1100€
+		</p>
+		<div class="progress">
+		  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="600" aria-valuemin="0" aria-valuemax="1100" style="width: {{(200+recup.bedrag)/1100*100}}%">
+		    {{(200+recup.bedrag)/1100*100 | number: 0}}%<span class="sr-only"></span>
+		  </div>
+		</div>
+	</div>
+  </div>
+</div>

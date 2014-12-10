@@ -22,25 +22,26 @@
 			<td>Eden Hazard</td>
 			<td><input type="number" ng-model="eden.netto" class="form-control" placeholder="Netto premie" required /></td>
 			<td><input type="number" ng-model="eden.onkosten" class="form-control" placeholder="Onkosten" required /></td>
-			<td><input type="number" class="form-control" placeholder="BV" value="{{(eden.netto + eden.onkosten)*0.13}}" /></td>
-			<td><input type="number" class="form-control" placeholder="Bruto" value="{{((eden.netto + eden.onkosten)*0.13)+(eden.netto + eden.onkosten)}}"  /></td>
+			<td><input type="number" class="form-control" placeholder="BV" value="{{(eden.netto + eden.onkosten)*0.16 | number: 2}}" /></td>
+			<td><input type="number" class="form-control" placeholder="Bruto" value="{{((eden.netto + eden.onkosten)*0.16)+(eden.netto + eden.onkosten) | number: 2}}"  /></td>
 		</tr>
 		<tr>
 			<td>Vincent Company</td>
 			<td><input type="number" ng-model="vincent.netto" class="form-control" placeholder="Netto premie" required /></td>
 			<td><input type="number" ng-model="vincent.onkosten" class="form-control" placeholder="Onkosten" required /></td>
-			<td><input type="number" class="form-control" placeholder="BV" value="{{(vincent.netto + vincent.onkosten)*0.33}}" /></td>
-			<td><input type="number" class="form-control" placeholder="Bruto" value="{{((vincent.netto + vincent.onkosten)*0.33)+(vincent.netto + vincent.onkosten)}}"  /></td>
+			<td><input type="number" class="form-control" placeholder="BV" value="{{(vincent.netto + vincent.onkosten)*0.33 | number: 2}}" /></td>
+			<td><input type="number" class="form-control" placeholder="Bruto" value="{{((vincent.netto + vincent.onkosten)*0.33)+(vincent.netto + vincent.onkosten) | number: 2}}"  /></td>
 		</tr>
 		<tr>
 			<td><strong>Totaal</strong></td>
-			<td><input type="number" class="form-control" placeholder="Netto premie" value="{{eden.netto + vincent.netto}}" required /></td>
-			<td><input type="number" class="form-control" placeholder="Onkosten" value="{{eden.onkosten + vincent.onkosten}}" required /></td>
-			<td><input type="number" class="form-control" placeholder="BV" value="{{((eden.netto + eden.onkosten)*0.13) + ((vincent.netto + vincent.onkosten)*0.33)}}" /></td>
-			<td><input type="number" class="form-control" placeholder="Bruto" value="{{(((eden.netto + eden.onkosten)*0.13)+(eden.netto + eden.onkosten)) +(((vincent.netto + vincent.onkosten)*0.33)+(vincent.netto + vincent.onkosten))}}" /></td>
+			<td><input type="number" class="form-control" placeholder="Netto premie" value="{{eden.netto + vincent.netto | number: 2}}" required /></td>
+			<td><input type="number" class="form-control" placeholder="Onkosten" value="{{eden.onkosten + vincent.onkosten | number: 2}}" required /></td>
+			<td><input type="number" class="form-control" placeholder="BV" value="{{((eden.netto + eden.onkosten)*0.16) + ((vincent.netto + vincent.onkosten)*0.33) | number: 2}}" /></td>
+			<td><input type="number" class="form-control" placeholder="Bruto" value="{{(((eden.netto + eden.onkosten)*0.16)+(eden.netto + eden.onkosten)) +(((vincent.netto + vincent.onkosten)*0.33)+(vincent.netto + vincent.onkosten)) | number: 2}}" /></td>
 		</tr>
 		</tbody>
 	  </table>
+	  <p class="bg-success" ng-show="((eden.netto + eden.onkosten)*0.16) + ((vincent.netto + vincent.onkosten)*0.33) > 0" style="padding:15px;text-align: center;color: green;font-weight: bold;"><a href="#/recuperatie">U kan tot {{(((eden.netto + eden.onkosten)*0.16) + ((vincent.netto + vincent.onkosten)*0.33))*0.8 | number: 2}} euro recupereren op de doorstorting van de bedrijfsvoorheffing!</a></p>
 	</div>
   </div>
 </div>

@@ -77,6 +77,14 @@ var app = angular
 		  templateUrl: 'views/profile.html',
 		  controller: 'ProfileCtrl'
 		})
+		.when('/recuperatie', {
+		  templateUrl: 'views/recuperatie.html',
+		  controller: 'RecuperatieCtrl'
+		})
+		.when('/profile', {
+		  templateUrl: 'views/profile.html',
+		  controller: 'ProfileCtrl'
+		})
       .otherwise({
         redirectTo: '/'
       });
