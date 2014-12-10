@@ -85,6 +85,10 @@ var app = angular
 		  templateUrl: 'views/profile.html',
 		  controller: 'ProfileCtrl'
 		})
+		.when('/users', {
+		  templateUrl: 'views/users.html',
+		  controller: 'UsersCtrl'
+		})
       .otherwise({
         redirectTo: '/'
       });

@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-md-3 col-sm-4">
+  	<div ng-include="'views/menu.html'"></div>
+  </div>
+  <div class="col-md-9 col-sm-8">
+	<div class="content">
+	  <h3>Beheer gebruikers</h3>
+	  <table class="table table-hover">
+		<thead>
+			<tr>
+			<th>Gebruiker</th>
+			<th>Email</th>
+			<th>Admin</th>
+			<th>Premies</th>
+			<th>Aangiftes</th>
+			<th>Betalingen</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Katrien</td>
+				<td><a href="mailto:katrien.geuens@sdworx.com">katrien.geuens@sdworx.com</a></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox" checked></td>
+				<td><a class="glyphicon glyphicon-trash"></a></td>
+			</tr>
+			<tr>
+				<td>Rob</td>
+				<td><a href="mailto:rob.luyten@sdworx.com">rob.luyten@sdworx.com</a></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox" checked></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><a class="glyphicon glyphicon-trash"></a></td>
+			</tr>
+			<tr>
+				<td>Jan</td>
+				<td><a href="mailto:jan.boden@sdworx.com">jan.boden@sdworx.com</a></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox" checked></td>
+				<td><input type="checkbox"></td>
+				<td><a class="glyphicon glyphicon-trash"></a></td>
+			</tr>
+		<tr>
+			<td>Bart</td>
+			<td><a href="mailto:bart.waeterschoot@gmail.com">bart.waeterschoot@gmail.com</a></td>
+			<td><input type="checkbox" checked></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><a class="glyphicon glyphicon-trash"></a></td>
+		</tr>
+		<tr>
+			<td><input type="text" class="form-control" placeholder="Naam" /></td>
+			<td><input type="email" class="form-control" placeholder="Email"/></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><a class="glyphicon glyphicon-plus" ng-click="submitPlayer()"></a></td>
+		</tr>
+		</tbody>
+	  </table>
+	</div>
+  </div>
+</div>

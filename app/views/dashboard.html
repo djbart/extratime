@@ -4,8 +4,40 @@
   </div>
   <div class="col-md-9 col-sm-8">
 	<div class="content">
-	  <h3>December 2014</h3>
-	
+	  <h3>Tijdslijn 2014</h3>
+	  <table class="table table-bordered">
+		<thead>
+			<tr>
+			<th>Jan</th>
+			<th>Feb</th>
+			<th>Mar</th>
+			<th>Apr</th>
+			<th>Mei</th>
+			<th>Jun</th>
+			<th>Jul</th>
+			<th>Aug</th>
+			<th>Sep</th>
+			<th>Okt</th>
+			<th>Nov</th>
+			<th>Dec</th>
+			</tr>
+		</thead>
+	    <tr>
+		  <td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+	      <td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+	      <td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+	      <td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+	      <td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+	      <td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+	      <td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+	      <td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+	      <td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+	      <td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+	      <td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+	      <td class="active"><a href="#/premies"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
+	    </tr>
+	  </table>
+	  <h3>Te nemen acties</h3>
 	  <ul class="timeline">
 	        <li>
 	          <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
@@ -22,10 +54,7 @@
 	          <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
 	          <div class="timeline-panel">
 	            <div class="timeline-heading">
-	              <h4 class="timeline-title">Premies betalen</h4>
-	            </div>
-	            <div class="timeline-body">
-	              <p><a href="#/premies">Klik hier</a></p>
+	              <h4 class="timeline-title"><p><a href="#/premies">Premies betalen</a></h4>
 	            </div>
 	          </div>
 	        </li>
@@ -33,14 +62,40 @@
 	          <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
 	          <div class="timeline-panel">
 	            <div class="timeline-heading">
-	              <h4 class="timeline-title">Jaarafsluiting</h4>
-	            </div>
-	            <div class="timeline-body">
-	              <p><a href="#/afsluiting">Klik hier</a></p>
+	              <h4 class="timeline-title"><a href="#/afsluiting">Jaarafsluiting</a></h4>
 	            </div>
 	          </div>
 	        </li>
 	    </ul>
+	    <h3>Berichten</h3>
+	    <div ng-repeat="comment in comments" class="row cmt">
+		  <div class="col-md-12">
+		    <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{ comment.text }}</p>
+		    <p class="author">verstuurd door
+		      <a ng-href="#/profile">
+		        {{ comment.creator }}
+		      </a>
+		      <a ng-href=""
+		        ng-click="deleteComment(comment)"
+		        ng-show="signedIn() && comment.creatorUID === user.uid">
+		        (delete)
+		      </a>
+		    </p>
+		  </div>
+		</div>
+		<div class="cmt-form">
+		    <div ng-hide="signedIn()">
+		      <p><a href="#/login">Log in</a> om een bericht te kunnen posten</p>
+		    </div>
+
+		    <form ng-show="signedIn()" ng-submit="addComment()">
+		      <textarea
+		        ng-model="commentText"
+		        placeholder="Verstuur bericht"
+		        class="form-control"></textarea><br />
+		      <input type="submit" value="Verstuur bericht" class="btn btn-primary" />
+		    </form>
+		  </div>
 	</div>
   </div>
 </div>
